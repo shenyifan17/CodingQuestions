@@ -23,7 +23,7 @@ class Solution(object):
         # smallest number in the triple. 
         res = []
         n = len(nums)
-        nums = sorted(nums)
+        nums.sort()
         for i in range(n-2): 
             ## iterate over nums[i] 
             ## for each nums[i] value, we need to find 
@@ -44,13 +44,12 @@ class Solution(object):
                 continue
             ## for fixed nums[i], we need two pointers 
             ## k > j > i st nums[j] + nums[k] = -nums[i]
-            ## 
-            j = i+1
-            k = n-1
-            new_target = -nums[i]
-            print("j = {}, k = {}, new_target = {}"\
-                  .format(j, k, new_target))
+            j = i+1 ## initialise j = i + 1, increment by 1. 
+            k = n-1 ## initialise k = len(nums) - 1, decrease by 1
+            new_target = -nums[i] ## find k > j > i st nums[j] + nums[k] = -nums[i]
             while j < k:
+                print("j = {}, k = {}, new_target = {}"\
+                .format(j, k, new_target))
                 summ = nums[j] + nums[k]
                 print("j < k TRUE, nums[j] = {}, "\
                       "nums[k] = {}, sum = {}"\
@@ -58,19 +57,29 @@ class Solution(object):
                               nums[j]+nums[k]))
                 if summ < new_target:
                     print("summ < new_target ! ")
+                    print(" ----- ")
                     j += 1
                 elif summ > new_target:
                     print("summ > new_target ! ")
+                    print(" ----- ")
                     k -= 1
                 else:
                     print("summ === new_target !,"\
                           "APPEND [{}, {}, {}]"\
                           .format(nums[i], nums[j], nums[k]))
+                    print(" ----- ")
                     res.append([nums[i], nums[j], nums[k]])
-                    while j < k and nums[j+1] == nums[j]:
+                    while j < k and nums[j+1] == nums[j]: 
+                        ## Deal with duplicates
+                        ## if having two same number in a roll
+                        ## jump to the next one j += 1 
+                        print("Increase j ... ")
                         j += 1
                     j += 1
                     while k > j and nums[k-1] == nums[k]:
+                        ## Deal with duplicates 
+                        ## decrease to the next one k -= 1 
+                        print("Decrease k ... ")
                         k -= 1
                     k -= 1
         return res
