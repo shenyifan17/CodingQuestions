@@ -23,6 +23,11 @@
 # The longest substrings 
 # with no more than '3' distinct characters are "cbbeb" & "bbebi".
 
+
+## Time complexity O(2N) >> O(N)
+## space complexity O(K) as we will be storing K+1 characters 
+## in hash map
+
 import collections
 
 def solution(str, k):
