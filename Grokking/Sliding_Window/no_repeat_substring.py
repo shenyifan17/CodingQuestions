@@ -36,6 +36,14 @@ def solution(str):
     we will shrink our sliding window 
     to ensure that we always have 
     distinct characters in the sliding window.
+
+
+    Time Complexity O(N)
+    Space Complexity O(K) where K is the number of distinct 
+    characters in the input string (K <= N)
+    In the worst case for hash map, the whole string might not 
+    have any repeating character so entire string will be added 
+    into HashMap
     """
     window_start = 0 
     max_length = 0
