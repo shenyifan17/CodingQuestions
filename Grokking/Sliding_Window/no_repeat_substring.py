@@ -58,6 +58,7 @@ def solution(str):
             # we will keep window_start 
             window_start = max(window_start, char_index_map[right_char]+1)
         # insert/update 'right_char' into the map
+        print(f'insert/update {str[window_end]} to {window_end} ')
         char_index_map[str[window_end]] = window_end
         # remember the maximum length so far
         max_length = max(max_length, window_end - window_start + 1)
