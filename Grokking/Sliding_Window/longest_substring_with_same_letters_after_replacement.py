@@ -40,6 +40,10 @@ def length_of_longest_substring(str, k):
     If we have more than ‘k’ remaining letters, 
     we should shrink the window as 
     we are not allowed to replace more than ‘k’ letters.
+
+    Time Complexity: O(N) where N is the number of letters in the input string
+    Space Conmplexity: O(K), but as we limit to lower case letters,
+                             we conclude it to be O(26) >> O(1)
     """
     window_start = 0
     max_length = 0 
