@@ -56,3 +56,11 @@ def main():
     print(binary_search([10, 6, 4], 4))
 
 main()
+
+# Time complexity
+# Since, we are reducing the search range by half at every step, 
+# this means that the time complexity of our algorithm will be O(logN) 
+# where ‘N’ is the total elements in the given array.
+# 
+# Space complexity
+# The algorithm runs in constant space O(1)O(1)
