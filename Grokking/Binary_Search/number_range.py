@@ -54,9 +54,9 @@ def binary_search(arr, key, findMaxIndex):
             start = mid + 1
         else: ## key == arr[mid]
             keyIndex = mid 
-            if findMaxIndex:
+            if findMaxIndex: # search results[1]
                 start = mid + 1 # search ahead to find the last index of 'key'
-            else: 
+            else:  # search results[0]
                 end = mid - 1 
     return keyIndex 
 
