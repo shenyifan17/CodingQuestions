@@ -38,7 +38,7 @@ as these two numbers will be closest to the ‘key’.
 The number that gives minimum difference will be our required number.
 """
 
-def search_min_diff(arr, key):
+def search_min_diff_element(arr, key):
 
     # boundary condition
     if key < arr[0]:
@@ -65,7 +65,14 @@ def search_min_diff(arr, key):
         return arr[start]
     return arr[end]
 
+def main():
+    print(search_min_diff_element([4, 6, 10], 7))
+    print(search_min_diff_element([4, 6, 10], 4))
+    print(search_min_diff_element([1, 3, 8, 10, 15], 12))
+    print(search_min_diff_element([4, 6, 10], 17))
 
+
+main()
 
 # Time complexity
 # Since, we are reducing the search range by half at every step, 
