@@ -25,6 +25,7 @@ def find_duplicate(arr):
     while slow != fast:
         slow = arr[slow]
         fast = arr[arr[fast]]
+        print(f'slow = {slow}, fast = {fast}')
 
     # find cycle length
     current = arr[arr[slow]]
