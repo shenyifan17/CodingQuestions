@@ -1,3 +1,3 @@
 # CodingQuestions
 
-From various source, sorted by type
+Coding questions from multiple sources. Happy coding! 
